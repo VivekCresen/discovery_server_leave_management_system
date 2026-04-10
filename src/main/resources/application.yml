@@ -3,6 +3,11 @@ spring:
     name: discovery-server
   config:
     import: optional:configserver:http://localhost:8888
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+      - org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration
 
 server:
   port: 8761
